@@ -6,6 +6,18 @@
 
 # at this point I'm ready to start trying to scrape some coupons.. not sure exacatly how to start this
 
+# For instance
+# I can go to Kroger:  https://www.kroger.com/savings/cl/coupons/  or https://www.kroger.com/weeklyad
+# with either of these, I seem to have to enter my zip code first(or actually a valid pickup kroger zip code).
+# Can I do that while scraping?
+# Then, on the weeklyad page it is all images, not text.
+#
+# Another idea would be instead of coupons to just go with the better price.
+# While it might not work at all grocery stores, it looks like I CAN do searches on walmart without being logged in
+# https://www.walmart.com/search?q=milk   And those results contain text that could be scraped.  This is leaving
+# behind my original idea of using coupons though.
+
+
 #pip install requests
 import requests
 import json
