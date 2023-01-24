@@ -4,6 +4,7 @@
 # for somewhere between 1 and 2 pts.  On the free account, I can have 150 points in one day.  Even if I multiply this
 # by 100 that's only 220mb of data in one day.  But, that's not counting the couponing data.  So, will this work?
 
+# at this point I'm ready to start trying to scrape some coupons.. not sure exacatly how to start this
 
 #pip install requests
 import requests
