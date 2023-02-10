@@ -21,12 +21,13 @@
 #pip install requests
 import requests
 import json
+import pandas as pd
 
 def get_recipes():
     ####################################################################################################
     #######  The number below can be up to 100 but lowering it during experimentations
     ####################################################################################################
-    howmany =5
+    howmany =100
     base = 'https://api.spoonacular.com/recipes/random?number=' + str(howmany) + '&limitLicense=true'
     apikey = '&apiKey=5d979222ba32497c9b0eb6f964db59e9'
     base += apikey
@@ -36,20 +37,8 @@ def get_recipes():
     r = requests.get(base)                  # send the request
     json_data = r.json()                    # read it as json
 
-    for key, value in json_data.items():                        # go through and print major points of each recipe to
-        for item in value:                                      # the screen
-            print("Recipe:  " + item['title'])
-            print("Servings:  " + str(item['servings']))
-            print("Source URL:  " + item['sourceUrl'])
-            print("\n" + item['summary'] + "\n\n")
-            # this isn't the best way to do the ingredients. It needs to be parsed out from the different keys to
-            # get the amounts and the ingredient.  This is just the most simple for right now
-            print("Ingredients: \n")
-            for ingredient in item['extendedIngredients']:
-                print(ingredient['original'])
-            print("\nInstructions: \n" + item['instructions'])
-            print("\nCredits:  " + item['creditsText'])
-            print('\n\n\n')
+    print(json.dumps(json_data, indent=4))
+
 
     with open(json_filename, "w") as write_file:                # save the entire data to a file with indents
         json.dump(json_data, write_file, indent=4)
